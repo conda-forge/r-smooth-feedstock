@@ -1,15 +1,15 @@
-{% set version = '4.5.0' %}
+{% set version = "4.5.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-smooth
-  version: "{{ version|replace('-', '_') }}"
+  version: {{ version|replace('-', '_') }}
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/smooth_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/smooth/smooth_{{ version }}.tar.gz
-  sha256: 7ab0e1cec1129d3add7f2b604f544ecca414cc9f87350b01058c907558d47be6
+  sha256: bc209e38dc66f05d26b6cf4df9c1d80eba075e92bee008b05fec6f05c65c667e
 
 build:
   number: 0
@@ -69,14 +69,9 @@ test:
 about:
   home: https://github.com/config-i1/smooth
   license: LGPL-2.1-only
-  summary: 'Functions implementing Single Source of Error state space models for purposes of
-    time series analysis and forecasting. The package includes ADAM (Svetunkov, 2023,
-    <https://openforecast.org/adam/>), Exponential Smoothing (Hyndman et al., 2008,
-    <doi:10.1007/978-3-540-71918-2>), SARIMA (Svetunkov & Boylan, 2019 <doi: 10.1080/00207543.2019.1600764>),
-    Complex Exponential Smoothing (Svetunkov & Kourentzes, 2018, <doi:10.13140/RG.2.2.24986.29123>),
-    Simple Moving Average (Svetunkov & Petropoulos, 2018 <doi:10.1080/00207543.2017.1380326>)
-    and several simulation functions. It also allows dealing with intermittent demand
-    based on the iETS framework (Svetunkov & Boylan, 2019, <doi:10.13140/RG.2.2.35897.06242>).'
+  summary: 'Functions implementing Single Source of Error state space models for purposes of time series analysis and forecasting. The package includes ADAM (Svetunkov, 2023, <https://openforecast.org/adam/>), Exponential Smoothing (Hyndman et al., 2008, <doi:10.1007/978-3-540-71918-2>), SARIMA (Svetunkov & Boylan, 2019
+    <doi: 10.1080/00207543.2019.1600764>), Complex Exponential Smoothing (Svetunkov & Kourentzes, 2018, <doi:10.13140/RG.2.2.24986.29123>), Simple Moving Average (Svetunkov & Petropoulos, 2018 <doi:10.1080/00207543.2017.1380326>) and several simulation functions. It also allows dealing with intermittent demand based on the
+    iETS framework (Svetunkov & Boylan, 2019, <doi:10.13140/RG.2.2.35897.06242>).'
   license_family: LGPL
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-2.1'
